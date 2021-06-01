@@ -1,0 +1,90 @@
+<html>
+    <head>
+        <title>Utec dbp10</title>
+    </head>
+    <body style="background-color: A2F9F1 " >
+     <TABLE BORDER>
+         
+      <TR style="background-color: red">
+        <TD> Servicios de comida </TD>
+        <br>
+		<TD COLSPAN=2> <img src="https://pbs.twimg.com/profile_images/1153360635025154050/zhTVQt8T.jpg" width="150" height="150" alt="Error de imagen"></TD>
+    </TR>
+	<TR style="background-color: E8A383 ">
+		<TD>
+        <form action="/create" method="POST">
+            <div>
+                    <br>
+                    <label for ="direccion">Direccion: </label>
+                    <br>
+                    <input type='texto' name="direccion"/>
+            </div>
+            <div>
+                    <br>
+                    <label for ="nombre">Nombre: </label>
+                    <br>
+                    <input type='texto' name="nombre"/>
+            </div>
+            <div>
+                    <br>
+                    <label for ="apellido">Apellido: </label>
+                    <br>
+                    <input type='texto' name="apellido"/>
+            </div>
+            <div>
+                    <br>
+                    <label for ="pedidos">Pedidos(Max. 4): </label>
+                    <br>
+                    <input type='texto' name="pedidos"/><br>
+                    <input type='texto' name="pedidos"/><br>
+                    <input type='texto' name="pedidos"/><br>
+                    <input type='texto' name="pedidos"/><br>
+            </div>
+            <div>
+                    <br>
+                    <input type="submit" value="Submit" />
+            </div>
+
+        </form>
+       </TD>
+       <TD>
+            <br>
+            -Direccion:
+            <ul>
+                {% for d in data %}
+                    {{d.direccion}}
+                {% endfor %}
+            </ul>
+            <br>
+            -Nombre:
+            <ul>
+                {% for d in data %}
+                    {{d.nombre}}
+                {% endfor %}
+            </ul>
+            <br>
+            -Apellido:
+            <ul>
+                {% for d in data %}
+                    {{d.apellido}}
+                {% endfor %}
+            </ul>
+            <br>
+            -Orden:
+            <ul>
+                {% for d in data %}
+                    <li>{{d.pedidos}}</li> 
+                    costo : "Acordar con el delivery.."
+                    <input type="submit" value="Pagar" />
+                {% endfor %}
+                
+            </ul>
+       </TD>
+    </TR>
+    </TABLE>
+    </body>
+</html>
+
+
+
+
